@@ -1,0 +1,15 @@
+E:\StudentAdminPortal\Nested_Bracket_Check\Nested_Bracket_Check\obj\Debug\net6.0\Nested_Bracket_Check.csproj.AssemblyReference.cache
+E:\StudentAdminPortal\Nested_Bracket_Check\Nested_Bracket_Check\obj\Debug\net6.0\Nested_Bracket_Check.GeneratedMSBuildEditorConfig.editorconfig
+E:\StudentAdminPortal\Nested_Bracket_Check\Nested_Bracket_Check\obj\Debug\net6.0\Nested_Bracket_Check.AssemblyInfoInputs.cache
+E:\StudentAdminPortal\Nested_Bracket_Check\Nested_Bracket_Check\obj\Debug\net6.0\Nested_Bracket_Check.AssemblyInfo.cs
+E:\StudentAdminPortal\Nested_Bracket_Check\Nested_Bracket_Check\obj\Debug\net6.0\Nested_Bracket_Check.csproj.CoreCompileInputs.cache
+E:\StudentAdminPortal\Nested_Bracket_Check\Nested_Bracket_Check\bin\Debug\net6.0\Nested_Bracket_Check.exe
+E:\StudentAdminPortal\Nested_Bracket_Check\Nested_Bracket_Check\bin\Debug\net6.0\Nested_Bracket_Check.deps.json
+E:\StudentAdminPortal\Nested_Bracket_Check\Nested_Bracket_Check\bin\Debug\net6.0\Nested_Bracket_Check.runtimeconfig.json
+E:\StudentAdminPortal\Nested_Bracket_Check\Nested_Bracket_Check\bin\Debug\net6.0\Nested_Bracket_Check.dll
+E:\StudentAdminPortal\Nested_Bracket_Check\Nested_Bracket_Check\bin\Debug\net6.0\Nested_Bracket_Check.pdb
+E:\StudentAdminPortal\Nested_Bracket_Check\Nested_Bracket_Check\obj\Debug\net6.0\Nested_Bracket_Check.dll
+E:\StudentAdminPortal\Nested_Bracket_Check\Nested_Bracket_Check\obj\Debug\net6.0\refint\Nested_Bracket_Check.dll
+E:\StudentAdminPortal\Nested_Bracket_Check\Nested_Bracket_Check\obj\Debug\net6.0\Nested_Bracket_Check.pdb
+E:\StudentAdminPortal\Nested_Bracket_Check\Nested_Bracket_Check\obj\Debug\net6.0\Nested_Bracket_Check.genruntimeconfig.cache
+E:\StudentAdminPortal\Nested_Bracket_Check\Nested_Bracket_Check\obj\Debug\net6.0\ref\Nested_Bracket_Check.dll
