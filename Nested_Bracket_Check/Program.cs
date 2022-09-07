@@ -3,14 +3,17 @@ using System;
 using System.Collections.Generic;
 using System.Reflection.Metadata;
 
-// Check nested brackets
 
+/// <summary>
+/// Check nested brackets
+/// </summary>
 public class nestedBrackets
 {
     public class Stack
     {
+        //Declare stack variables
         public int top = -1;
-        public char[] items = new char[100];
+        public char[] items = new char[100];//assumption that 100 brackets will be max
 
         public void push(char x)
         {
