@@ -2,13 +2,39 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection.Metadata;
-
+using System.Security.Cryptography.X509Certificates;
 
 /// <summary>
 /// Check nested brackets
 /// </summary>
 public class nestedBrackets
 {
+    /// <summary>
+    /// Checks if an input lsp file has balanced paranthesis or not
+    /// </summary>
+    /// <param name="args"></param>
+    public static void Main(String[] args)
+    {
+
+        // String fileName = @"E:\StudentAdminPortal\Nested_Bracket_Check\test.lsp";
+        string fileName = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "test.lsp");
+        string[] lines = File.ReadAllLines(fileName);
+        //Print the input file
+        Console.WriteLine(String.Join(Environment.NewLine, lines));
+        //Read input string from file
+        String exp = new String(String.Join(Environment.NewLine, lines));
+        //Filter out only the paranthesis to avoid memory leakage.
+        char[] chars = exp.ToCharArray().Where(x => x.Equals('(') || x.Equals(')')).ToArray();
+        // CheckNested or not
+        if (paranBalanced(chars))
+            Console.WriteLine("\nParanthesis closed properly");
+        else
+            Console.WriteLine("\nParanthesis not closed properly");
+    }
+    /// <summary>
+    /// Class that defines the Stack for pushing and popping paranthesis and
+    /// Check if they are balanced.
+    /// </summary>
     public class Stack
     {
         //Declare stack variables
@@ -48,39 +74,50 @@ public class nestedBrackets
         }
     }
 
-    //Check matching brackets
-    static Boolean isMatchingPair(char char1,
-                                  char char2)
+    /// <summary>
+    /// Checks if the 2 brackets are a matching pair
+    /// </summary>
+    /// <param name="char1"></param>
+    /// <param name="char2"></param>
+    /// <returns> true if matches and false if doesn't match</returns>
+    static Boolean isMatchingPair(char paran1,
+                                  char paran2)
     {
-        if (char1 == '(' && char2 == ')')
+        if (paran1 == '(' && paran2 == ')')
             return true;
         else
             return false;
     }
 
-    // Return true if expression has balanced
-    // Brackets
-    static Boolean paranBalanced(char[] exp)
+    /// <summary>
+    /// Return true if expression has balanced
+    //  Brackets
+    /// </summary>
+    /// <param name="exp"></param>
+    /// <returns>true if paranthetis are balanced</returns>
+    static Boolean paranBalanced(char[] brackets)
     {
-        // Declare an empty character stack */
+        // Declare an empty stack
         Stack<char> stackParan = new Stack<char>();
 
         // Traverse the given expression to
         //   check matching brackets
-        for (int i = 0; i < exp.Length; i++)
+        for (int i = 0; i < brackets.Length; i++)
         {
             // If the exp[i] is a starting
             // bracket then push it
-            if ( exp[i] == '(')
-                stackParan.Push(exp[i]);
+            if (brackets[i] == '(')
+                stackParan.Push(brackets[i]);
 
             //  If exp[i] is an ending bracket
             //  then pop from stack and check if the
             //   popped bracket is a matching pair
-            if (exp[i] == ')')
+            if (brackets[i] == ')')
             {
                 // If we see an ending bracket without
                 //   a pair then return false
+                //also checks if the first bracket is closed
+                //and returns false
                 if (stackParan.Count == 0)
                 {
                     return false;
@@ -89,7 +126,7 @@ public class nestedBrackets
                 // Pop the top element from stack, if
                 // it is not a pair brackets 
                 else if (!isMatchingPair(stackParan.Pop(),
-                                         exp[i]))
+                                         brackets[i]))
                 {
                     return false;
                 }
@@ -109,30 +146,4 @@ public class nestedBrackets
         }
     }
 
-    // Driver code
-    public static void Main(String[] args)
-    {
-                     
-        String fileName = @"E:\StudentAdminPortal\Nested_Bracket_Check\test.lsp";
-        string[] lines = File.ReadAllLines(fileName);  
-        //Print the input file
-        Console.WriteLine(String.Join(Environment.NewLine, lines));
-        //Read input string from file
-        String exp = new String(String.Join(Environment.NewLine, lines));
-        char[] chars = exp.ToCharArray();
-        char[] paran= new char[chars.Length];
-        for (int i = 0; i < chars.Length; i++)
-        {
-            if (chars[i]== '(' || chars[i] == ')')
-            {
-                paran[i] = chars[i];
-                Console.WriteLine(paran[i]);
-            }   
-        }
-        // CheckNested or not
-        if (paranBalanced(paran))
-            Console.WriteLine("\nNested");
-        else
-            Console.WriteLine("\nParanthesis not closed properly");
-    }
 }
